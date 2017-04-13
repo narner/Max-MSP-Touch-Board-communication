@@ -15,3 +15,12 @@ One-way communication from the [Bare Conductive Touch Board](http://www.barecond
 1. Download the [.zip](https://github.com/BareConductive/Max-MSP-Touch-Board-communication/archive/public.zip) or clone the repository to your local machine - if downloading the .zip, extract the contents somewhere that suits you.
 1. Plug in your Touch Board via USB or run datastream-osc on your Pi Cap, with --host set to the address of the machine running Max/MSP.
 1. Open the patch and follow the onscreen instructions.
+
+
+## Proximity Detection
+
+I modified the original Bare Conductive Data Stream example to include the detection of hand 
+proximity in relation to an electric-paint based sensor connected to the electrodes of the 
+Touch Board. Proximity detection is done by subtracting the FDAT value from the BDAT value of the 
+electrodes. These values can then be scaled using an object such as zmap, to a value range
+appropriate for whatever parameter you want to control with the proximity value. 
